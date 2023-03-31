@@ -50,7 +50,7 @@ export class BoardComponent implements OnInit {
          [2, 4, 6],
       ];
 
-      //assegna gameOutcome
+      //assegna winner in caso di vittoria
       for (let i = 0; i < lines.length; i++) {
          const [a, b, c] = lines[i];
          if (
@@ -61,11 +61,12 @@ export class BoardComponent implements OnInit {
             return this.squares[a];
          }
       }
-      // check for tie
+      // check for tie: controlla se li ho cliccati tutti
       const tie = this.squares.every((square) => square !== null);
       if (tie) {
          return 'pareggio';
       }
+
       return null;
    }
 }

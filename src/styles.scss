@@ -1,0 +1,19 @@
+/*-------------------
+    IMPORT bootstrap
+-------------------*/
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+/*-------------------
+    IMPORT abstract
+-------------------*/
+@import "scss/abstract/variables";
+@import "scss/abstract/mixins";
+@import "scss/abstract/functions";
+@import "scss/abstract/reset";
+
+/*-------------------
+    IMPORT core
+-------------------*/
+@import "scss/core/typography";
+@import "scss/core/layout";
+@import "scss/core/buttons";

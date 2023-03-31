@@ -7,7 +7,7 @@ import { Xo } from 'src/app/xo';
    styleUrls: ['./board.component.scss'],
 })
 export class BoardComponent implements OnInit {
-   squares!: any[];
+   squares!: string[];
    xIsNext: boolean = false;
    winner!: string | null;
    constructor() {}
@@ -37,12 +37,15 @@ export class BoardComponent implements OnInit {
 
    calculateWinner(): null | string {
       const lines = [
+         // win conditions orizzontali
          [0, 1, 2],
          [3, 4, 5],
          [6, 7, 8],
+         //win conditions verticali
          [0, 3, 6],
          [1, 4, 7],
          [2, 5, 8],
+         //obliqui
          [0, 4, 8],
          [2, 4, 6],
       ];

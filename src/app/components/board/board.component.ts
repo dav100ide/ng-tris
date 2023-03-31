@@ -9,7 +9,7 @@ import { Xo } from 'src/app/xo';
 export class BoardComponent implements OnInit {
    squares!: string[];
    xIsNext: boolean = false;
-   winner!: string | null;
+   gameOutcome!: string | null;
    constructor() {}
 
    ngOnInit(): void {
@@ -17,7 +17,7 @@ export class BoardComponent implements OnInit {
    }
    newGame(): void {
       this.squares = Array(9).fill(null);
-      this.winner = '';
+      this.gameOutcome = '';
       this.xIsNext = true;
    }
 
@@ -32,10 +32,10 @@ export class BoardComponent implements OnInit {
          this.squares.splice(idx, 1, this.currentPlayer);
          this.xIsNext = !this.xIsNext;
       }
-      this.winner = this.calculateWinner();
+      this.gameOutcome = this.calculategameOutcome();
    }
 
-   calculateWinner(): null | string {
+   calculategameOutcome(): null | string {
       const lines = [
          // win conditions orizzontali
          [0, 1, 2],
@@ -49,6 +49,8 @@ export class BoardComponent implements OnInit {
          [0, 4, 8],
          [2, 4, 6],
       ];
+
+      //assegna gameOutcome
       for (let i = 0; i < lines.length; i++) {
          const [a, b, c] = lines[i];
          if (
@@ -58,6 +60,11 @@ export class BoardComponent implements OnInit {
          ) {
             return this.squares[a];
          }
+      }
+      // check for tie
+      const tie = this.squares.every((square) => square !== null);
+      if (tie) {
+         return 'pareggio';
       }
       return null;
    }

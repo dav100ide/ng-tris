@@ -3,7 +3,14 @@ button {
    height: 100%;
    font-size: 2rem;
    font-family: fantasy;
-   color: #0c098b;
+   &.x {
+      background-color: #090836;
+      color: rgb(255, 198, 91);
+   }
+   &.o {
+      background-color: rgb(93, 248, 45);
+      color: rgb(243, 4, 4);
+   }
    &:disabled {
       opacity: 0.4;
    }

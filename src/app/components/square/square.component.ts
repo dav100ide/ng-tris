@@ -3,7 +3,7 @@ import { Component, Input } from '@angular/core';
 @Component({
    selector: 'app-square',
    template: `
-      <button>
+      <button [ngClass]="value === 'X' ? 'x' : 'o'">
          {{ value }}
       </button>
    `,
@@ -11,4 +11,5 @@ import { Component, Input } from '@angular/core';
 })
 export class SquareComponent {
    @Input() value!: string;
+   @Input() isX!: boolean;
 }

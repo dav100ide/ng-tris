@@ -1,0 +1,10 @@
+button {
+   width: 100%;
+   height: 100%;
+   font-size: 2rem;
+   font-family: fantasy;
+   color: #0c098b;
+   &:disabled {
+      opacity: 0.4;
+   }
+}

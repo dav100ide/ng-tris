@@ -1,0 +1,11 @@
+main {
+   padding-block: 1rem;
+   --size: 100px;
+   display: grid;
+   grid-template-columns: repeat(3, var(--size));
+   grid-gap: 0;
+   app-square {
+      height: var(--size);
+      border: 1px gray solid;
+   }
+}

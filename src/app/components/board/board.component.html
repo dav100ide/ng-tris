@@ -5,7 +5,7 @@
 </button>
 
 <h2 *ngIf="gameOutcome === 'pareggio'" class="p-2">{{ gameOutcome }}</h2>
-<h2 *ngIf="gameOutcome && gameOutcome !== 'pareggio'" class="p-2">
+<h2 *ngIf="gameOutcome !== 'pareggio'" class="p-2">
    Ha vinto il giocatore: {{ gameOutcome }}
 </h2>
 

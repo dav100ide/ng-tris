@@ -1,3 +1,3 @@
-# a simple angular boilerplate  with bootstrap 
+# a simple angular tic-tac-toe game
 
-## ATTENTION it doesn't have bootstrap js (no modals, offcanvas or other dynamic components of Bootstrap)
+coded for learning purposes

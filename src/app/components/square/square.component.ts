@@ -3,7 +3,7 @@ import { Component, Input } from '@angular/core';
 @Component({
    selector: 'app-square',
    template: `
-      <button [ngClass]="btnCss" [disabled]="disabled">
+      <button [ngClass]="btnCss" [disabled]="btnDisabled">
          {{ value }}
       </button>
    `,
@@ -11,7 +11,7 @@ import { Component, Input } from '@angular/core';
 })
 export class SquareComponent {
    @Input() value!: string;
-   @Input() disabled = false;
+   @Input() btnDisabled = false;
    //computed property per calcolare btnCss
    get btnCss(): string {
       return this.value === 'X' ? 'x' : this.value === 'O' ? 'o' : '';

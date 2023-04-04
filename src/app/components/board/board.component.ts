@@ -10,12 +10,19 @@ export class BoardComponent implements OnInit {
    squares!: string[];
    xIsNext: boolean = false;
    gameOutcome!: string | null;
-   constructor() {}
+
+   constructor() {
+      this.btnsDisabled = [];
+      for (let i = 1; i <= 9; i++) {
+         this.btnsDisabled.push(false);
+      }
+   }
 
    ngOnInit(): void {
       this.newGame();
    }
    newGame(): void {
+      this.btnsDisabled = new Array(9).fill(false);
       this.squares = Array(9).fill(null);
       this.gameOutcome = null;
       this.xIsNext = true;
@@ -33,6 +40,10 @@ export class BoardComponent implements OnInit {
          this.xIsNext = !this.xIsNext;
       }
       this.gameOutcome = this.calculategameOutcome();
+      //verifico se è finito il gioco
+      if (this.gameOutcome === 'X' || this.gameOutcome === 'O') {
+         this.endGame(this.squares);
+      }
    }
 
    calculategameOutcome(): null | string {
@@ -68,5 +79,19 @@ export class BoardComponent implements OnInit {
       }
 
       return null;
+   }
+
+   btnsDisabled: boolean[];
+   endGame(btns: string[]): void {
+      //ciclo su this.squares e pusho in btnsDisabled 9 bool
+      for (let i = 0; i < btns.length; i++) {
+         const btn = btns[i];
+         if (btn === 'X' || btn === 'O') {
+            this.btnsDisabled[i] = false;
+         } else {
+            this.btnsDisabled[i] = true;
+         }
+      }
+      console.log(this.btnsDisabled);
    }
 }

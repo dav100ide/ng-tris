@@ -14,6 +14,6 @@
       *ngFor="let square of squares; let i = index"
       [value]="square"
       (click)="makeMove(i)"
-      [btnDisabled]="btnsDisabled[i]"
+      [disabled]="btnsDisabled[i]"
    ></app-square>
 </main>

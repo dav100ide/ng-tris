@@ -1,9 +1,28 @@
-/*-------------------
-    IMPORT bootstrap
--------------------*/
-// @import "../node_modules/bootstrap/scss/bootstrap.scss";
-@import "../node_modules/bootstrap/scss/bootstrap-utilities.scss";
-@import "../node_modules/bootstrap/scss/bootstrap-grid.scss";
+/*-----------------------------------
+    only IMPORT bootstrap GRID AND UTILS
+---------------------------------------*/
+//import di ogni singolo file utile
+@import "../node_modules/bootstrap/scss/mixins/banner";
+@include bsBanner(Grid);
+@include bsBanner(Utilities);
+
+$include-column-box-sizing: true !default;
+
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+//eventuali map-merge
+@import "../node_modules/bootstrap/scss/maps";
+
+@import "../node_modules/bootstrap/scss/vendor/rfs";
+@import "../node_modules/bootstrap/scss/root";
+
+@import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/containers";
+@import "../node_modules/bootstrap/scss/grid";
+
+//ALL UTILITIES
+@import "../node_modules/bootstrap/scss/utilities";
+@import "../node_modules/bootstrap/scss/utilities/api";
 
 /*-------------------
     IMPORT abstract

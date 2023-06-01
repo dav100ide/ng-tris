@@ -10,7 +10,18 @@ $include-column-box-sizing: true !default;
 
 @import "../node_modules/bootstrap/scss/functions";
 @import "../node_modules/bootstrap/scss/variables";
-//eventuali map-merge
+//eventuali map-merge o overwrite
+$extra-spacers: (
+   6: $spacer * 3.5,
+   7: $spacer * 4,
+);
+$spacers: map-merge($spacers, $extra-spacers);
+
+$purple-tree-colors: (
+   "primary": purple,
+);
+$theme-colors: map-merge($theme-colors, $purple-tree-colors);
+
 @import "../node_modules/bootstrap/scss/maps";
 
 @import "../node_modules/bootstrap/scss/vendor/rfs";
